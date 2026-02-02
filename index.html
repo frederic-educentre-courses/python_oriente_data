@@ -16,9 +16,76 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section data-visibility="hidden">Slide X</section>
-				<section>Slide 2</section>
+				<section>Python orientée data</section>
+				<section>
+					<h2>Déroulé du cours</h2>
+					<ul>
+						<li>Installation de Python et des bibliothèques nécessaires (pandas, numpy, plotly)</li>
+						<li>Nettoyage et préparation des données avec pandas</li>
+						<li>Analyse exploratoire des données</li>
+						<li>Visualisation des données avec plotly</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Installation de Python et des bibliothèques</h2>
+					<pre><code>python -m venv venv
+source venv/bin/activate
+pip install pandas numpy plotly</code></pre>
+				</section>
+				<section>
+					<h2>Chargé un jeu de données CSV</h2>
+					<pre><code>import pandas as pd
+
+df = pd.read_csv('chemin/vers/fichier.csv')
+</code></pre>
+				</section>
+				<section>
+					<h2>Afficher les données</h2>
+					<pre><code>import pandas as pd
+
+df = pd.read_csv('chemin/vers/fichier.csv')
+print(df.head())
+</code></pre>
+				</section>
+				<section>
+					<h2>Réaliser une moyenne</h2>
+					<pre><code>import pandas as pd
+
+df = pd.read_csv('chemin/vers/fichier.csv')
+moyenne = df['colonne'].mean()
+print(moyenne)
+</code></pre>
+				</section>
+				<section>
+					<h2>Trouver la médiane</h2>
+					<pre><code>import pandas as pd
+
+df = pd.read_csv('chemin/vers/fichier.csv')
+mediane = df['colonne'].median()
+print(mediane)
+</code></pre>
+<p>La médiane est la valeur qui sépare la moitié supérieure des données de la moitié inférieure.</p>
+				</section>
+				<section>
+					<h2>Calculer l'écart-type</h2>
+					<pre><code>import pandas as pd
+df = pd.read_csv('chemin/vers/fichier.csv')
+ecart_type = df['colonne'].std()
+print(ecart_type)
+</code></pre>
+				</section>
+				<section>
+					<p>L'écart-type mesure la dispersion des données par rapport à la moyenne. Plus simplement, il indique à quel point les valeurs d'un ensemble de données varient par rapport à la moyenne de cet ensemble.</p>
+<p>Si il est élevé, cela signifie que les valeurs sont très dispersées et qu'il y a beaucoup de variations. Il n'y a pas d'homogénéité.</p>
+
+				</section>
+				<section>
+					<h2>Nettoyage des données</h2>
+					<pre><code># Supprimer les lignes avec des valeurs manquantes
+df = df.dropna()
+# Remplacer les valeurs manquantes par la moyenne de la colonne
+df['colonne'] = df['colonne'].fillna(df['colonne'].mean())</code></pre>
+				</section>
 			</div>
 		</div>
 
